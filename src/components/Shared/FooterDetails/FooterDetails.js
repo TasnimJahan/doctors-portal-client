@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const FooterDetails = (props) => {
-    console.log(props);
+    // console.log(props);
     return (
         <div className="col-md-3">
             <h6 className="text-primary">{props.menuTitle ? props.menuTitle : " "}</h6>

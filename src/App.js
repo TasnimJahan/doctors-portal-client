@@ -5,6 +5,7 @@ import {
   Route,
 } from "react-router-dom";
 import './App.css';
+import Appointment from "./components/Appointment/Appointment/Appointment";
 import Home from "./components/Home/Home/Home";
 
 function App() {
@@ -13,6 +14,9 @@ function App() {
         <Switch>
           <Route path="/home">
             <Home />
+          </Route>
+          <Route path="/appointment">
+            <Appointment />
           </Route>
           <Route exact path="/">
             <Home />
