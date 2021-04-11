@@ -1,0 +1,11 @@
+.doctorImg{
+    /* border:none; */
+    position: relative;
+}
+.drAddress{
+    position: absolute;
+    border: none;
+    bottom: 0px;
+    width:100%;
+    background: white;
+}

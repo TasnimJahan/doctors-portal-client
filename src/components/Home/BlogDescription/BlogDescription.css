@@ -1,0 +1,26 @@
+.blogDescription:hover{
+    background-image: url("../../../images/quote.png"), linear-gradient(90deg,#17D2BE, #4EDBE9);
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: 17rem;
+    opacity: .8;
+    color: #fff;
+    background-size: 55% auto, cover;
+}
+.svg-inline--fa.fa-w-14 {
+    font-size: 2em;
+    position: absolute;
+}
+.blogDescription:hover .blogImg{
+    display:none;
+}
+.blogDescription:hover .blogQuote{
+    visibility: hidden;
+}
+.arrow{
+    visibility: hidden;
+}
+.blogDescription:hover .arrow{
+    visibility: visible;
+    cursor: pointer;
+}

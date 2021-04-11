@@ -1,0 +1,21 @@
+.make-appointment {
+    height:420px;
+    width:100%;
+    outline:thin solid black;
+    position:relative;
+    background-image: url('../../../images/appoinmentBg.png');
+}
+.make-appointment::before {
+    height:100%;
+    content:' ';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: #3C4457;
+    opacity: .9;
+    display:block;
+}
+.make-appointment img{
+    height: 550px;
+    transform: translateY(-128px);
+}
