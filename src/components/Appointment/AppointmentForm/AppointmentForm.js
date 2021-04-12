@@ -16,11 +16,31 @@ const customStyles = {
 };
 Modal.setAppElement('#root')
 
-const AppointmentForm = ({modalIsOpen,closeModal,appointmentOn}) => {
+const AppointmentForm = ({modalIsOpen,closeModal,appointmentOn,date}) => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+    const onSubmit = data => {
+        data.service = appointmentOn;
+        data.date=date;
+        data.createdDate = new Date();
+        //post hole ekhane fetch e method bole dite hy
+        fetch('http://localhost:5000/addAppointment',{
+            method: 'POST',
+            headers: {'content-type': 'application/json'},
+            body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(success => {
+            if(success){
+                closeModal();
+                alert('Appointment created successfully');
+            }
+        })
 
-  console.log(watch("example")); // watch input value by passing the name of it
+        // console.log(data);
+        // closeModal();
+    };
+
+//   console.log(watch("example")); // watch input value by passing the name of it
 
     return (
         <div>
@@ -33,6 +53,7 @@ const AppointmentForm = ({modalIsOpen,closeModal,appointmentOn}) => {
         >
  
         <h2 className="text-brand text-center mb-5">{appointmentOn}</h2>
+        <p className="text-secondary text-center"><small>ON {date.toDateString()}</small></p>
         {/* <button className="btn btn-brand w-25 text-white mb-3" onClick={closeModal}>close</button> */}
         <form onSubmit={handleSubmit(onSubmit)}>
                     
