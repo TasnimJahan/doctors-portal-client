@@ -27,7 +27,7 @@ const Doctors = () => {
             <div className="container">
                 <div className="section-header d-flex justify-content-center">
                     <div className="text-center">
-                        <h5 className="text-primary text-uppercase">our blog</h5>
+                        <h5 className="text-primary text-uppercase">our doctors</h5>
                     </div>
                 </div>
                 <div className="card-deck mt-5 row d-flex justify-content-center">

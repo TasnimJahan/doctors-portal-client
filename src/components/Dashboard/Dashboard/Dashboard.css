@@ -2,3 +2,15 @@
     background-color: #F4FDFB;
     height:100%;
 }
+.react-calendar {
+    margin: 0 auto;
+    margin-top: 6%;
+    padding: 3%;
+    width: 80%;
+    border: none;
+    box-shadow: 1px 1px 10px 3px lightgrey
+}
+
+/* .react-calendar__tile:enabled:hover, .react-calendar__tile:enabled:focus {
+    background-color: #57313b;
+} */

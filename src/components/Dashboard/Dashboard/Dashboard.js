@@ -10,6 +10,7 @@ const Dashboard = () => {
     const [appointments,setAppointments] =useState([]);
 
     const handleDateChange = (date)=> {
+        // console.log(date.toDateString());
         setSelectedDate(date);
         // fetch('http://localhost:5000/appointmentsByDate',{
         //     method: 'POST',
@@ -42,13 +43,14 @@ const Dashboard = () => {
                     <Sidebar/>
                 </div>
                 <div className="col-md-5">
+                    <h2 className="ms-5 mt-3">Appointments</h2>
                     <Calendar
                         onChange={handleDateChange}
                         value={new Date()}
                     />
                 </div>
-                <div className="col-md-5">
-                    <AppointmentsByDate appointments={appointments}></AppointmentsByDate>
+                <div className="col-md-5 mt-5">
+                    <AppointmentsByDate date={selectedDate} appointments={appointments}></AppointmentsByDate>
                 </div>
             </div>
         </section>
