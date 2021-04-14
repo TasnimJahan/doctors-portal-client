@@ -13,6 +13,7 @@ import OverAllAppointmentDashboard from "./components/Dashboard/OverAllAppointme
 import Prescriptions from "./components/Dashboard/Prescriptions/Prescriptions";
 import Home from "./components/Home/Home/Home";
 import Login from "./components/Login/Login";
+import PrivateRoute from "./components/Login/PrivateRoute/PrivateRoute";
 
 export const UserContext = createContext();
 
@@ -28,21 +29,21 @@ function App() {
             <Route path="/appointment">
               <Appointment />
             </Route>
-            <Route path="/dashboard/appointment">
+            <PrivateRoute path="/dashboard/appointment">
               <Dashboard/>
-            </Route>
-            <Route path="/dashboard/allPatients">
+            </PrivateRoute>
+            <PrivateRoute path="/dashboard/allPatients">
             <AllPatients></AllPatients>
-          </Route>
-            <Route path="/dashboard/prescriptions">
+          </PrivateRoute>
+            <PrivateRoute path="/dashboard/prescriptions">
             <Prescriptions/>
-          </Route>
-            <Route path="/dashboard/dashboard">
-            <OverAllAppointmentDashboard/>
-          </Route>
-            <Route path="/dashboard/addDoctor">
+          </PrivateRoute>
+            <PrivateRoute path="/dashboard/addDoctor">
             <AddDoctor/>
-          </Route>
+          </PrivateRoute>
+          <PrivateRoute path="/dashboard">
+            <OverAllAppointmentDashboard/>
+          </PrivateRoute>
             <Route path="/login">
             <Login></Login>
             </Route>

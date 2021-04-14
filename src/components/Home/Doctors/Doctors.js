@@ -1,38 +1,19 @@
-import React from 'react';
-import doctor from '../../../images/doctor.png'
+import React, { useEffect, useState } from 'react';
 import DoctorsDetail from '../DoctorsDetail/DoctorsDetail';
-
-const doctorsData = [
-    {
-        name: "Dr Caudi",
-        phone: "+12 345 678 908",
-        img: doctor
-    },
-    {
-        name: "Dr Caudi",
-        phone: "+12 345 678 908",
-        img: doctor
-    },
-    {
-        name: "Dr Caudi",
-        phone: "+12 345 678 908",
-        img: doctor
-    }
-]
-
-
 const Doctors = () => {
+    const [doctors, setDoctors] = useState([])
+    useEffect( () => {
+        fetch('http://localhost:5000/doctors')
+        .then(res => res.json())
+        .then(data => setDoctors(data))
+    }, [])
     return (
-        <section className="doctors my-5 py-5">
+        <section className="doctors">
             <div className="container">
-                <div className="section-header d-flex justify-content-center">
-                    <div className="text-center">
-                        <h5 className="text-primary text-uppercase">our doctors</h5>
-                    </div>
-                </div>
-                <div className="card-deck mt-5 row d-flex justify-content-center">
+                <h5 className="text-center  text-primary mb-5">Our Doctors</h5>
+                <div className="row">
                     {
-                        doctorsData.map(doctor=> <DoctorsDetail doctor={doctor}></DoctorsDetail>)
+                        doctors.map(doctor =><DoctorsDetail key={doctor._id} doctor={doctor} />)
                     }
                 </div>
             </div>

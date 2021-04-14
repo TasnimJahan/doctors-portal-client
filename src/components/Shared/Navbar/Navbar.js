@@ -17,10 +17,10 @@ const Navbar = () => {
                             <a className="nav-link ms-5" href="/dashboard/appointment">Patient</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link ms-5" href="/dashboard/dashboard">Dashboard</a>
+                            <a className="nav-link ms-5" href="/dashboard">Dashboard</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link ms-5 text-white" href="/dashboard/dashboard">Admin</a>
+                            <a className="nav-link ms-5 text-white" href="/dashboard">Admin</a>
                         </li>
                         <li className="nav-item">
                             <a className="nav-link ms-5 text-white" href="#">Blog</a>

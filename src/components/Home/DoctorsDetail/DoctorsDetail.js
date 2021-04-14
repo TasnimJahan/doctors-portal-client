@@ -1,18 +1,17 @@
 import React from 'react';
-import './DoctorsDetail.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPhoneAlt } from '@fortawesome/free-solid-svg-icons'
-
+import drImg from '../../../images/doctor-sm.png'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPhoneAlt } from '@fortawesome/free-solid-svg-icons';
 const DoctorsDetail = ({doctor}) => {
     return (
-        <div class="col-sm-4 col-md-4">
-             <div class="card" style={{width: '24rem',margin:'0 auto',border:'none'}}>
-                <img class="doctorImg" src={doctor.img} alt=""/>
-                <div class="card-body drAddress text-center">
-                    <h5 class="card-title">{doctor.name}</h5>
-                    <p class="card-text"><FontAwesomeIcon style={{color: '#5FC7C7'}} icon={faPhoneAlt} />{doctor.phone}</p>
-                </div>
-            </div>
+        <div className="col-md-4 col-sm-6 text-center">
+            {
+            doctor.image ? <img style={{height: '200px'}} src={`data:image/png;base64,${doctor.image.img}`}/>
+            :
+            <img style={{height: '200px'}} className="img-fluid mb-3" src={`https://salty-plateau-71286.herokuapp.com/${doctor.img}`} alt=""/>
+        }
+            <h4>{doctor.name}</h4>
+            <p> <FontAwesomeIcon className="text-primary" icon={faPhoneAlt}/> +880-188-934789</p>
         </div>
     );
 };
