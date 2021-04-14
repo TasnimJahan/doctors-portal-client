@@ -23,7 +23,7 @@ const AppointmentForm = ({modalIsOpen,closeModal,appointmentOn,date}) => {
         data.date=date;
         data.createdDate = new Date();
         //post hole ekhane fetch e method bole dite hy
-        fetch('http://localhost:5000/addAppointment',{
+        fetch('https://rocky-forest-80852.herokuapp.com/addAppointment',{
             method: 'POST',
             headers: {'content-type': 'application/json'},
             body: JSON.stringify(data)

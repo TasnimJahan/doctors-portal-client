@@ -7,7 +7,7 @@ const AllPatients = () => {
     const [appointments, setAppointments] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/appointments')
+        fetch('https://rocky-forest-80852.herokuapp.com/appointments')
             .then(res => res.json())
             .then(data => setAppointments(data))
     }, [])
