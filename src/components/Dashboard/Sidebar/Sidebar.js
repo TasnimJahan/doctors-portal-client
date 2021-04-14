@@ -16,18 +16,20 @@ const Sidebar = () => {
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({email: loggedInUser.email})
         })
-        .then(response => response.json())
-        .then(data => setIsDoctor(data))
+        .then(res => res.json())
+        .then(data => setIsDoctor(data));
     },[])
 
     return (
         <div className="sidebar d-flex flex-column justify-content-between col-md-2 py-5 px-4" style={{height:"100vh"}}>
             <ul className="list-unstyled">
-                <li>
-                    <Link to="/dashboard" className="text-white">
-                        <FontAwesomeIcon className="icons" icon={faGripHorizontal} /> <span style={{marginLeft:'17%'}}>Dashboard</span> 
-                    </Link>
-                </li>
+                {
+                    isDoctor && <li>
+                        <Link to="/dashboard" className="text-white">
+                            <FontAwesomeIcon className="icons" icon={faGripHorizontal} /> <span style={{marginLeft:'17%'}}>Dashboard</span> 
+                        </Link>
+                    </li>
+                }
                 <li>
                     <Link to="/dashboard/appointment" className="text-white">
                         <FontAwesomeIcon className="icons" icon={faCalendar} /> <span style={{marginLeft:'17%'}}>Appointment</span> 
