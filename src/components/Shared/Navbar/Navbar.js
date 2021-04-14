@@ -14,13 +14,13 @@ const Navbar = () => {
                             <a className="nav-link ms-5 active" aria-current="page" href="/home">Home</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link ms-5" href="#">About</a>
+                            <a className="nav-link ms-5" href="/dashboard/appointment">Patient</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link ms-5" href="#">Dental Service</a>
+                            <a className="nav-link ms-5" href="/dashboard/dashboard">Dashboard</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link ms-5 text-white" href="#">Reviews</a>
+                            <a className="nav-link ms-5 text-white" href="/dashboard/dashboard">Admin</a>
                         </li>
                         <li className="nav-item">
                             <a className="nav-link ms-5 text-white" href="#">Blog</a>
